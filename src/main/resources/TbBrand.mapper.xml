@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.langkun.TbBrandMapper">
+    <resultMap id="connResultMap" type="com.langkun.TbBrand">
+        <id property="brandId" column="brand_id" javaType="java.lang.Integer"/>
+        <result property="brandName" column="brand_name" javaType="java.lang.String"/>
+    </resultMap>
+    <select id="queryBrandByName" resultMap="connResultMap">
+        select * from tb_brand where brand_name=#{brandName}
+    </select>
+</mapper>
